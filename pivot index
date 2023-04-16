@@ -1,0 +1,31 @@
+public static int pivotIndex(int[] nums) {
+        int sum=0;
+        for(int i=0;i<nums.length;i++){
+            sum+=nums[i];
+        }
+        int lsum=0;
+        int rsum=sum;
+         for(int i=0;i<nums.length;i++){
+         rsum=rsum-nums[i];
+         if(lsum==rsum){
+             return i;
+         }
+         else{
+             lsum+=nums[i];
+         }
+         }
+        return -1;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        int num[]=new int[n];
+        for(int i=0;i<n;i++){
+        num[i]=sc.nextInt();    
+        }
+         System.out.print(pivotIndex(num));   
+        
+    }
+}
