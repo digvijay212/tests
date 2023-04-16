@@ -1,0 +1,68 @@
+Sample Input 0
+
+5
+9
+46 0 38 0 6 9 9 15 0
+9
+18 5 29 0 0 0 35 0 16
+7
+25 0 4 0 0 17 0
+6
+8 0 34 0 26 36
+7
+0 46 27 0 0 17 11
+
+
+Sample Output 0
+
+46 38 6 9 9 15 0 0 0 
+18 5 29 35 16 0 0 0 0 
+25 4 17 0 0 0 0 
+8 34 26 36 0 0 
+46 27 17 11 0 0 0 
+
+
+
+
+
+
+
+
+
+
+
+
+public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();  
+        while(t-->0){
+
+        int n = sc.nextInt(); 
+        int arr[]=new int[n];
+       
+     for (int i=0; i < n;i++){
+      
+            arr[i]=sc.nextInt();
+         
+    }
+            Stack<Integer>s1=new Stack<>();
+            Stack<Integer>s2=new Stack<>();
+            for(int i=0;i<arr.length;i++){
+                if(arr[i]==0){
+                    s2.push(arr[i]);
+                }
+                else{
+                    s1.push(arr[i]);
+                }
+            }
+            for(int ans:s1){
+                System.out.print(ans+" ");
+            }
+            for(int zero:s2){
+                System.out.print(zero+" ");
+            }
+            System.out.println();
+            }
+        }
+        
+}
